@@ -2,7 +2,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
-    port = (process.env.PORT || 3000);
+    port = (process.env.PORT || 3000),
+    writer = require('express-writer');
 
 // Application settings
 app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
@@ -27,6 +28,13 @@ app.use(function (req, res, next) {
   res.locals.assetPath="/public/";
   next();
 });
+
+// set up for all requests to result in static responses
+
+if (process.env.GENERATE_STATIC_SITE) {
+  app.use(writer.watch);
+  writer.setWriteDirectory('./static_site');
+}
 
 // routes (found in routes.js)
 
