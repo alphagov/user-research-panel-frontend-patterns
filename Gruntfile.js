@@ -100,6 +100,9 @@ module.exports = function (grunt) {
           'bundle',
           'bundle exec govuk-lint-sass public/sass/elements/'
         ].join('&&')
+      },
+      run_app: {
+        command: 'GENERATE_STATIC_SITE=1 node server.js'
       }
     }
 
@@ -148,10 +151,22 @@ module.exports = function (grunt) {
   );
 
   grunt.registerTask(
+    'generate',
+    'Generate the static site',
+    [
+      'copy',
+      'convert_template',
+      'replace',
+      'sass',
+      'shell:run_app'
+    ]
+  );
+
+  grunt.registerTask(
     'lint',
     'Use govuk-scss-lint to lint the sass files',
     function() {
-      grunt.task.run('shell', 'lint_message');
+      grunt.task.run('shell:multiple', 'lint_message');
     }
   );
 
@@ -176,6 +191,50 @@ module.exports = function (grunt) {
     'Output a message once the tests are complete',
     function() {
       grunt.log.write("scss lint is complete and the app runs, without errors.");
+    }
+  );
+
+  grunt.registerTask(
+    'generate_static_site',
+    'Generate a static version of all the routes',
+    function () {
+      var phantomjs = require('grunt-lib-phantomjs').init(grunt);
+
+      // Merge task-specific and/or target-specific options with these defaults.
+      var options = this.options({
+        // Default PhantomJS timeout.
+        timeout: 5000,
+        // Explicit non-file URLs to test.
+        urls: ['http://localhost:3000', 'http://localhost:3000/layout/'],
+        force: false
+      });
+
+      var urls = options.urls;
+
+      // Built-in error handlers.
+      phantomjs.on('fail.load', function(url) {
+        phantomjs.halt();
+        grunt.log.error('PhantomJS unable to load "' + url + '" URI.');
+      });
+
+      phantomjs.on('fail.timeout', function() {
+        phantomjs.halt();
+        grunt.log.error('PhantomJS timed out.');
+      });
+      // Pass-through console.log statements.
+      phantomjs.on('console', console.log.bind(console));
+
+      urls.forEach(function(url) {
+        grunt.verbose.subhead('Testing ' + url + ' ').or.write('Testing ' + url + ' ');
+        phantomjs.spawn(url, {
+          // Additional PhantomJS options.
+          options: options,
+          // Do stuff when done.
+          done: function(err) {
+            grunt.verbose.subhead('Done with ' + url + ' ').or.write('Done with ' + url + ' ');
+          },
+        });
+      });
     }
   );
 };
