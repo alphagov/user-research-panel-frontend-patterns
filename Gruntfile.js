@@ -112,6 +112,12 @@ module.exports = function (grunt) {
       run_app: {
         command: 'GENERATE_STATIC_SITE=1 node server.js'
       }
+    },
+
+    generate_static_site: {
+      options: {
+        urls: ['http://localhost:3000/', 'http://localhost:3000/patterns/apply']
+      }
     }
 
   });
@@ -213,9 +219,9 @@ module.exports = function (grunt) {
       // Merge task-specific and/or target-specific options with these defaults.
       var options = this.options({
         // Default PhantomJS timeout.
-        timeout: 5000,
+        timeout: 1000,
         // Explicit non-file URLs to test.
-        urls: ['http://localhost:3000', 'http://localhost:3000/layout/'],
+        urls: [],
         force: false
       });
 
@@ -234,14 +240,17 @@ module.exports = function (grunt) {
       // Pass-through console.log statements.
       phantomjs.on('console', console.log.bind(console));
 
+      // This task is async.
+      var done = this.async();
+
       urls.forEach(function(url) {
-        grunt.verbose.subhead('Testing ' + url + ' ').or.write('Testing ' + url + ' ');
+        grunt.verbose.subhead('Testing ' + url + '\n').or.write('Testing ' + url + '\n');
         phantomjs.spawn(url, {
           // Additional PhantomJS options.
           options: options,
           // Do stuff when done.
           done: function(err) {
-            grunt.verbose.subhead('Done with ' + url + ' ').or.write('Done with ' + url + ' ');
+            done(err);
           },
         });
       });

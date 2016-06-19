@@ -43,7 +43,7 @@ routes.bind(app, '/public/');
 
 // start the app
 
-app.listen(port);
+var server = app.listen(port);
 console.log('');
 console.log('Listening on port ' + port);
 console.log('');
@@ -51,5 +51,6 @@ console.log('');
 if (process.env.GENERATE_STATIC_SITE) {
   exec('grunt generate_static_site', function (err, stdout, stderr) {
     console.log(stdout);
+    server.close();
   });
 }
