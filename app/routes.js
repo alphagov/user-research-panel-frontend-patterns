@@ -212,5 +212,11 @@ module.exports = {
       res.render('guide_alpha_beta', { 'page_name' : page_name });
     });
 
+    // patterns - apply 
+    app.get('/patterns/apply', function (req, res) {
+      var page_name = "Apply";
+      res.render('patterns/apply', { 'page_name' : page_name });
+    });
+
   }
 };
