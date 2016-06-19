@@ -8,6 +8,9 @@ static_site
 # Ignore compiled stylesheets
 public/stylesheets/
 
+# Ignore compiled javascripts
+public/javascripts/*.min.js
+
 # Ignore WIP form examples
 views/examples/forms
 

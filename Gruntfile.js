@@ -27,6 +27,14 @@ module.exports = function (grunt) {
       }
     },
 
+    // build JS
+    directives: {
+      files: {
+        src: 'public/javascripts/application.js',
+        dest: 'public/javascripts/application.min.js'
+      },
+    },
+
     // Copies templates and assets from external modules and dirs
     copy: {
       assets: {
@@ -115,7 +123,8 @@ module.exports = function (grunt) {
     'grunt-nodemon',
     'grunt-text-replace',
     'grunt-concurrent',
-    'grunt-shell'
+    'grunt-shell',
+    'grunt-sprockets-directives'
   ].forEach(function (task) {
     grunt.loadNpmTasks(task);
   });
@@ -136,6 +145,7 @@ module.exports = function (grunt) {
     'convert_template',
     'replace',
     'sass',
+    'directives',
     'concurrent:target'
   ]);
 
