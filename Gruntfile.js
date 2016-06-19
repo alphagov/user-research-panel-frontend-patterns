@@ -116,7 +116,7 @@ module.exports = function (grunt) {
 
     generate_static_site: {
       options: {
-        urls: ['http://localhost:3000/', 'http://localhost:3000/patterns/apply']
+        urls: ['http://localhost:3000/apply']
       }
     }
 
