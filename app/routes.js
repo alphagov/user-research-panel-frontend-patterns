@@ -47,5 +47,17 @@ module.exports = {
       res.render('text-field-date-with-validation', { 'page_name' : page_name });
     });
 
+    // patterns - radio buttons - radio field with two options 
+    app.get('/radio-field-two-options', function (req, res) {
+      var page_name = "Radio field with two options";
+      res.render('radio-field-two-options', { 'page_name' : page_name });
+    });
+
+    // patterns - radio buttons - radio field with two options with validation
+    app.get('/radio-field-two-options-with-validation', function (req, res) {
+      var page_name = "Radio field with two options with validation";
+      res.render('radio-field-two-options-with-validation', { 'page_name' : page_name });
+    });
+
   }
 };

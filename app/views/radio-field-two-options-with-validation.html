@@ -1,0 +1,62 @@
+{{<layout}}
+
+{{$pageTitle}}Radio buttons for a field with two options with validation - User research panel front-end patterns{{/pageTitle}}
+
+{{$content}}
+    <main id="content" role="main" tabindex="-1">
+
+      {{>breadcrumb}}
+
+      <h1 class="heading-xlarge">
+        Radio buttons for a field with two options with validation
+      </h1>
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <form action="" method="get">
+            <!-- add a class of 'error' to the <fieldset> tag -->
+            <fieldset class="inline form-group error">
+
+              <!-- remove the 'form-label' or 'form-label-bold' class from the <label> tag -->
+              <legend id="field-1">
+
+                <!-- wrap the label text in a span with a class of 'form-label' or 'form-label-bold' -->
+                <span class="form-label">Radio field 1</span>
+                <span class="error-message">Error message goes here</span>
+              </legend>
+
+              <label class="block-label" for="radio-inline-1">
+                <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="radio-inline-2">
+                <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                No
+              </label>
+
+            </fieldset>
+            <fieldset class="inline form-group error">
+              <legend class="form-label"> 
+                <span class="form-label">Radio field 1 with hint</span>
+                <span class="form-hint">Hint to help users choose an option</span>
+                <span class="error-message">Error message goes here</span>
+              </legend>
+              <label class="block-label" for="radio-inline-with-hint-1">
+                <input id="radio-inline-with-hint-1" type="radio" name="radio-inline-group-with-hint" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="radio-inline-with-hint-2">
+                <input id="radio-inline-with-hint-2" type="radio" name="radio-inline-group-with-hint" value="No">
+                No
+              </label>
+            </fieldset>
+            <button type="submit" class="button">Continue</button>
+          </form>
+        </div>
+      </div>
+      <!-- see http://govuk-elements.herokuapp.com/errors/ for guidance -->
+    </main><!-- / #content -->
+{{/content}}
+
+{{/layout}}
