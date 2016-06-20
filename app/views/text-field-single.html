@@ -18,7 +18,16 @@
             <!-- use form-group elements to create space between fields -->
             <!-- see: http://govuk-elements.herokuapp.com/form-elements/#form-spacing -->
             <div class="form-group">
-              <label class="form-label" for="field-1">Text field 1</label>
+              <label class="form-label" for="field-1">
+                Text field 1
+              </label>
+              <input class="form-control" id="field-1" name="field-1" type="text">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-1">
+                Text field 1 with hint
+                <span class="form-hint">Hint to help the user fill in the field</span>
+              </label>
               <input class="form-control" id="field-1" name="field-1" type="text">
             </div>
             <button type="submit" class="button">Continue</button>
