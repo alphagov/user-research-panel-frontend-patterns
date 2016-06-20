@@ -17,10 +17,22 @@ module.exports = {
       res.render('text-field-single', { 'page_name' : page_name });
     });
 
+    // patterns - text fields - single text field with validation
+    app.get('/text-field-single-with-validation', function (req, res) {
+      var page_name = "Single text field with validation";
+      res.render('text-field-single-with-validation', { 'page_name' : page_name });
+    });
+
     // patterns - text fields - multiple text fields 
     app.get('/text-field-multiple', function (req, res) {
       var page_name = "Multiple text fields";
       res.render('text-field-multiple', { 'page_name' : page_name });
+    });
+
+    // patterns - text fields - multiple text fields with validation
+    app.get('/text-field-multiple-with-validation', function (req, res) {
+      var page_name = "Multiple text fields with validation";
+      res.render('text-field-multiple-with-validation', { 'page_name' : page_name });
     });
 
   }
