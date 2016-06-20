@@ -1,5 +1,9 @@
 @import "govuk-elements";
 
+#content {
+  outline: none;
+}
+
 .form-date .error,
 .form-date .error-summary {
   border-left: none;
