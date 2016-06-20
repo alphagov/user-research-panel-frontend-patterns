@@ -94,5 +94,17 @@ module.exports = {
       var page_name = "Single field with multiple checkbox options with validation";
       res.render('checkbox-field-single-multiple-options-with-validation', { 'page_name' : page_name });
     });
+
+    // patterns - checkbox buttons - multiple checkbox fields with multiple options 
+    app.get('/checkbox-field-multiple-multiple-options', function (req, res) {
+      var page_name = "Single field with multiple checkbox options";
+      res.render('checkbox-field-multiple-multiple-options', { 'page_name' : page_name });
+    });
+
+    // patterns - checkbox buttons - multiple checkbox fields with multiple options with validation
+    app.get('/checkbox-field-multiple-multiple-options-with-validation', function (req, res) {
+      var page_name = "Single field with multiple checkbox options with validation";
+      res.render('checkbox-field-multiple-multiple-options-with-validation', { 'page_name' : page_name });
+    });
   }
 };
