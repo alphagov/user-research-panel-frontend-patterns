@@ -35,5 +35,17 @@ module.exports = {
       res.render('text-field-multiple-with-validation', { 'page_name' : page_name });
     });
 
+    // patterns - text fields - date text field 
+    app.get('/text-field-date', function (req, res) {
+      var page_name = "Date field";
+      res.render('text-field-date', { 'page_name' : page_name });
+    });
+
+    // patterns - text fields - date text field 
+    app.get('/text-field-date-with-validation', function (req, res) {
+      var page_name = "Date field with validation";
+      res.render('text-field-date-with-validation', { 'page_name' : page_name });
+    });
+
   }
 };

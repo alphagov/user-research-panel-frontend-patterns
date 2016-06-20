@@ -1,1 +1,7 @@
 @import "govuk-elements";
+
+.form-date .error,
+.form-date .error-summary {
+  border-left: none;
+  padding-left: 0;
+}
