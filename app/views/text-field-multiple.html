@@ -1,0 +1,35 @@
+{{<layout}}
+
+{{$pageTitle}}Multiple text fields - User research panel front-end patterns{{/pageTitle}}
+
+{{$content}}
+    <main id="content" role="main" tabindex="-1">
+
+      {{>breadcrumb}}
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+          <h1 class="heading-xlarge">
+            Multiple text fields
+          </h1>
+
+          <form action="" method="get">
+            <!-- use form-group elements to create space between fields -->
+            <!-- see: http://govuk-elements.herokuapp.com/form-elements/#form-spacing -->
+            <div class="form-group">
+              <label class="form-label" for="field-1">Text field 1</label>
+              <input class="form-control" id="field-1" name="field-1" type="text">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-2">Text field 2</label>
+              <input class="form-control" id="field-2" name="field-2" type="text">
+            </div>
+            <button type="submit" class="button">Continue</button>
+          </form>
+        </div>
+      </div>
+    </main><!-- / #content -->
+{{/content}}
+
+{{/layout}}
