@@ -1,7 +1,7 @@
-//= require vendor/jquery-1.11.0.min.js
-//= require ../../govuk_modules/govuk_frontend_toolkit/javascripts/vendor/polyfills/bind.js
-//= require ../../govuk_modules/govuk_frontend_toolkit/javascripts/govuk/selection-buttons.js
-//= require vendor/details.polyfill.js
+@import "vendor/jquery-1.11.0.min.js";
+@import "../../govuk_modules/govuk_frontend_toolkit/javascripts/vendor/polyfills/bind.js";
+@import "../../govuk_modules/govuk_frontend_toolkit/javascripts/govuk/selection-buttons.js";
+@import "vendor/details.polyfill.js";
 
 function ShowHideContent() {
   var self = this;
