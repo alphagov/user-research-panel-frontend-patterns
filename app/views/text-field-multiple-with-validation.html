@@ -6,9 +6,11 @@
     <main id="content" role="main" tabindex="-1">
 
       {{>breadcrumb}}
-      <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
 
-        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+      <!-- the aria-labelledby attribute should have a value matching the id of the <h1> tag below -->
+      <div class="error-summary" role="group" aria-labelledby="error-summary-heading-2" tabindex="-1">
+
+        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-2">
           Message to alert the user to a problem goes here
         </h1>
 
