@@ -15,24 +15,24 @@
         <div class="column-two-thirds">
 
           <form action="" method="get">
-            <!-- the wrapping <fieldset> tag should have a class of 'inline' for fields with two options -->
+            <!-- the wrapping <fieldset> tag must have a class of 'inline' for fields with two options -->
             <fieldset class="inline form-group">
 
-              <!-- The <legend> tag should label the field -->
+              <!-- The <legend> tag must label the field -->
               <legend class="form-label">Radio field 1</legend>
 
-              <!-- The 'for' attribute should match the id of the form it labels -->
+              <!-- The 'for' attribute must match the id of the form it labels -->
               <label class="block-label" for="radio-inline-1">
 
-                <!-- All <input> tags should share the same name -->
+                <!-- All <input type=radio> tags must share the same name for their group -->
                 <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
                 Yes
               </label>
 
-              <!-- The 'for' attribute should match the id of the form it labels -->
+              <!-- The 'for' attribute must match the id of the form it labels -->
               <label class="block-label" for="radio-inline-2">
 
-                <!-- All <input> tags should share the same name -->
+                <!-- All <input type=radio> tags must share the same name for their group -->
                 <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
                 No
               </label>
@@ -43,14 +43,10 @@
                 Radio field 1 with hint
                 <span class="form-hint">Hint to help users choose an option</span>
               </legend>
-
-              <!-- The 'for' attribute should match the id of the form it labels -->
               <label class="block-label" for="radio-inline-with-hint-1">
                 <input id="radio-inline-with-hint-1" type="radio" name="radio-inline-group-with-hint" value="Yes">
                 Yes
               </label>
-
-              <!-- The 'for' attribute should match the id of the form it labels -->
               <label class="block-label" for="radio-inline-with-hint-2">
                 <input id="radio-inline-with-hint-2" type="radio" name="radio-inline-group-with-hint" value="No">
                 No

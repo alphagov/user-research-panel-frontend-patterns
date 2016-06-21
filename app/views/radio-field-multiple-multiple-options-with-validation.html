@@ -7,7 +7,7 @@
 
       {{>breadcrumb}}
 
-      <!-- the aria-labelledby attribute should have a value matching the id of the <h1> tag below -->
+      <!-- the aria-labelledby attribute must have a value matching the id of the <h1> tag below -->
       <div class="error-summary" role="group" aria-labelledby="error-summary-heading-1" tabindex="-1">
 
         <h1 class="heading-medium error-summary-heading" id="error-summary-heading-1">
@@ -22,7 +22,7 @@
         <!-- 
           Each item in this list links to a field with validation errors.
         
-          For this to work, the href attribute must include a fragment identifier ('#' + id) pointing to the id of first radio <input> of the field with the problem.
+          For this to work, the href attribute must include a fragment identifier ('#' + id) pointing to the id of first radio <input type=radio> of the field with the problem.
         -->
         <ul class="error-summary-list">
           <li><a href="#radio-group-1-option-1">Field 1</a></li>
@@ -54,20 +54,14 @@
               </legend>
 
               <label class="block-label" for="radio-group-1-option-1">
-
-                <!-- All <input> tags should share the same name for the group -->
                 <input id="radio-group-1-option-1" type="radio" name="radio-group-1" value="Option 1">
                 Option 1
               </label>
               <label class="block-label" for="radio-group-1-option-2">
-
-                <!-- All <input> tags should share the same name for the group -->
                 <input id="radio-group-1-option-2" type="radio" name="radio-group-1" value="Option 2">
                 Option 2
               </label>
               <label class="block-label" for="radio-group-1-option-3">
-
-                <!-- All <input> tags should share the same name for the group -->
                 <input id="radio-group-1-option-3" type="radio" name="radio-group-1" value="Option 3">
                 Option 3
               </label>
