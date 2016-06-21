@@ -38,16 +38,22 @@
 
                   <!-- Add a class of 'form-group-day' to each form-group <div> -->
                   <div class="form-group form-group-day">
+
+                    <!-- The 'for' attribute should match the id of the form it labels -->
                     <label class="form-label" for="dob-day">Day</label>
 
                     <!-- The aria-describedby attribute needs to contain the id of the span with class 'form-hint' above -->
                     <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
                   </div>
                   <div class="form-group form-group-month">
+
+                    <!-- The 'for' attribute should match the id of the form it labels -->
                     <label class="form-label" for="dob-month">Month</label>
                     <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
                   </div>
                   <div class="form-group form-group-year">
+
+                    <!-- The 'for' attribute should match the id of the form it labels -->
                     <label class="form-label" for="dob-year">Year</label>
                     <!-- Ensure the max attribute contains the current year -->
                     <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
