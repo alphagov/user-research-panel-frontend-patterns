@@ -1,6 +1,6 @@
 {{<layout}}
 
-{{$pageTitle}}Single field with multiple checkbox options and a conditional section - User research panel front-end patterns{{/pageTitle}}
+{{$pageTitle}}Single field with multiple checkbox options and a conditional section with validation - User research panel front-end patterns{{/pageTitle}}
 
 {{$content}}
     <main id="content" role="main" tabindex="-1">
@@ -8,17 +8,19 @@
       {{>breadcrumb}}
 
       <h1 class="heading-xlarge">
-        Single field with multiple checkbox options and a conditional section
+        Single field with multiple checkbox options and a conditional section with validation 
       </h1>
 
       <div class="grid-row">
         <div class="column-two-thirds">
 
           <form action="" method="get">
-            <fieldset class="form-group">
+            <fieldset class="form-group error">
 
-              <!-- The <legend> tag should label the field -->
-              <legend class="form-label-bold">Your country</legend>
+              <legend>
+                <span class="form-label-bold">Your country</span>
+                <span class="error-message">Error message goes here</span>
+              </legend>
 
               <label class="block-label" for="country-uk">
 
@@ -140,10 +142,11 @@
               </div>
 
             </fieldset>
-            <fieldset class="form-group">
+            <fieldset class="form-group error">
               <legend>
                 <span class="form-label-bold">Your country</span>
                 <span class="form-hint">Hint to help the user choose an option</span>
+                <span class="error-message">Error message goes here</span>
               </legend>
               <label class="block-label" for="country-uk">
                 <input id="country-uk-with-hint" type="checkbox" name="country-uk-with-hint" value="True">
