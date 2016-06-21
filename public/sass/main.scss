@@ -1,11 +1,40 @@
 @import "govuk-elements";
 
+/* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
 #content {
   outline: none;
 }
 
+/* Date fields contain multiple .error <div>s so these need the CSS they inherit to be cancelled */
 .form-date .error,
 .form-date .error-summary {
   border-left: none;
   padding-left: 0;
+}
+
+.form-group .panel-border-narrow {
+  padding-bottom: em(15, 19);
+}
+
+select {
+  @include core-14;
+
+  padding-top: 6px;
+  padding-bottom: 4px;
+  @media (max-width: 640px) {
+    padding-top: 4px;
+    padding-bottom: 1px;
+  }
+
+  background: $white;
+  line-height: 1.3;
+  width: 100%;
+
+  @include media(tablet) {
+    padding: ($gutter / 6) ($gutter / 3 * 2) ($gutter / 6) ($gutter / 3);
+  }
+
+  @include ie-lte(9) {
+    padding: 0 0 0 ($gutter / 3);
+  }
 }
