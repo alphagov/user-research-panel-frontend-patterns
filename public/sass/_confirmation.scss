@@ -1,0 +1,148 @@
+/* Styles for the confirmation page */
+@import "conditionals";
+@import "shims";
+@import "colours";
+
+.confirmation {
+  article {
+    padding-top: 2em;
+    padding-bottom: 0;
+  }
+
+  form {
+    padding-top: 0;
+    overflow: hidden;
+
+    @include media(desktop) {
+      margin-right: 0;
+      max-width: 100%;
+    }
+  }
+
+  h3 {
+    color: $grey-1;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  div,
+  .warning {
+    border-top: 1px solid $grey-3;
+  }
+
+  div {
+    @extend %contain-floats;
+    padding: 1em 5.5em 1em 0;
+    position: relative;
+
+    @include media(tablet) {
+      padding-right: 0;
+    }
+
+    &.notice {
+      padding-right: 0;
+
+      @include media(tablet) {
+        padding-right: 5.5em;
+      }
+
+      .heading-medium {
+        margin-top: 1em;
+      }
+    }
+
+    h3,
+    .data-wrap,
+    .change {
+      vertical-align: top;
+    }
+
+    h3,
+    .data-wrap {
+      border-top: none;
+      margin: 0 0 1em;
+      padding: 0;
+
+      @include media(tablet) {
+        @include inline-block;
+      }
+    }
+
+    h3 {
+      font-weight: normal;
+
+      @include media(tablet) {
+        width: 33%
+      }
+    }
+
+    .data-wrap {
+      padding: 0;
+
+      @include media(tablet) {
+        width: 52%;
+        padding: 0;
+
+        p,
+        div {
+          padding-right: 1.25em;
+          padding-left: 1.25em;
+        }
+      }
+
+      p {
+        color: $black;
+      }
+
+      .message {
+        color: $grey-1;
+      }
+
+      .postcode {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .back-to-previous {
+    position: static;
+  }
+
+  .warning {
+    font-weight: 600;
+    background: url("/public/images/icon-important.png") no-repeat 0 1.25em;
+    @include device-pixel-ratio() {
+        background-image:url("/public/images/icon-important-2x.png");
+        background-size: 34px 34px;
+    }
+    min-height: 34px;
+    padding: 1.6em 0 0 3em;
+
+    p {
+      color: $black;
+      font-weight: 600;
+    }
+  }
+
+  .validation-message {
+    border-top: none;
+    padding-left: 0.5em;
+    margin-left: 0;
+  }
+
+  .next {
+    box-sizing: border-box;
+    text-align: center;
+    clear: both;
+    margin: 1em 0 2em;
+    padding: 0.6em 0.8em 0.5em 0.8em;
+    width: 100%;
+
+    @include media(tablet) {
+      width: auto;
+    }
+  }
+}

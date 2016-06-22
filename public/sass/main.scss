@@ -1,4 +1,5 @@
 @import "govuk-elements";
+@import "confirmation";
 
 /* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
 #content {
@@ -12,10 +13,12 @@
   padding-left: 0;
 }
 
+/* Centralises the selectbox in our conditional section */
 .form-group .panel-border-narrow {
   padding-bottom: em(15, 19);
 }
 
+/* Selectbox styles from Whitehall app. Mobile version used for all screen sizes to avoid grey version */
 select {
   @include core-14;
 
@@ -37,4 +40,10 @@ select {
   @include ie-lte(9) {
     padding: 0 0 0 ($gutter / 3);
   }
+}
+
+/* Textarea styles */
+
+textarea.form-control {
+  width: auto;
 }

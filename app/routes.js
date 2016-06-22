@@ -5,10 +5,17 @@ module.exports = {
       var page_name = "Index";
       res.render('index', { 'page_name' : page_name });
     });
+
     // patterns - apply
     app.get('/apply', function (req, res) {
       var page_name = "Apply";
       res.render('apply', { 'page_name' : page_name });
+    });
+
+    // patterns - confirmation
+    app.get('/confirmation', function (req, res) {
+      var page_name = "Confirmation";
+      res.render('confirmation', { 'page_name' : page_name });
     });
 
     // patterns - text fields - single text field 
@@ -33,6 +40,18 @@ module.exports = {
     app.get('/text-field-multiple-with-validation', function (req, res) {
       var page_name = "Multiple text fields with validation";
       res.render('text-field-multiple-with-validation', { 'page_name' : page_name });
+    });
+
+    // patterns - text fields - single multi-line text field 
+    app.get('/text-field-multiline-single', function (req, res) {
+      var page_name = "Single multi-line text field";
+      res.render('text-field-multiline-single', { 'page_name' : page_name });
+    });
+
+    // patterns - text fields - single multi-line text field with validation
+    app.get('/text-field-multiline-single-with-validation', function (req, res) {
+      var page_name = "Single multi-line text field with validation";
+      res.render('text-field-multiline-single-with-validation', { 'page_name' : page_name });
     });
 
     // patterns - text fields - date text field 
