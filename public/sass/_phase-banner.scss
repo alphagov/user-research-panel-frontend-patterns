@@ -1,0 +1,9 @@
+@import "colours";
+
+.phase-banner-styleguide {
+  @include phase-banner();
+
+  .phase-tag {
+    background-color: $black;
+  }
+}

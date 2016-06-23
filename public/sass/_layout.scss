@@ -1,0 +1,5 @@
+@import "grid_layout";
+
+.column-one-whole {
+  @include grid-column(1);
+}

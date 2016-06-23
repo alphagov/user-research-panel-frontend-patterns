@@ -1,5 +1,7 @@
 @import "govuk-elements";
 @import "confirmation";
+@import "layout";
+@import "phase-banner";
 
 /* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
 #content {
