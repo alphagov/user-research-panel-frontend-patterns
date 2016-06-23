@@ -111,22 +111,6 @@
     position: static;
   }
 
-  .warning {
-    font-weight: 600;
-    background: url("/public/images/icon-important.png") no-repeat 0 1.25em;
-    @include device-pixel-ratio() {
-        background-image:url("/public/images/icon-important-2x.png");
-        background-size: 34px 34px;
-    }
-    min-height: 34px;
-    padding: 1.6em 0 0 3em;
-
-    p {
-      color: $black;
-      font-weight: 600;
-    }
-  }
-
   .validation-message {
     border-top: none;
     padding-left: 0.5em;
