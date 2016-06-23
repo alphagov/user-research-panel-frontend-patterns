@@ -12,11 +12,11 @@ echo "HEAD_SHA: $HEAD_SHA"
 if [ "$MASTER_SHA" == "$HEAD_SHA" ]; then
   echo "We are on master branch"
   # get the version from the version file
-  VERSION_TAG="v`cat VERSION.txt`"
+  VERSION_TAG=`cat VERSION.txt`
 
   # check to make sure the tag doesn't already exist
   if ! git rev-parse $VERSION_TAG >/dev/null 2>&1; then
-    echo "$VERSION_TAG doesn't exist already"
+    echo "$VERSION_TAG is a new version. Pushing it as a tag."
     echo "Creating new tag: $VERSION_TAG"
     git tag $VERSION_TAG
     git push origin $VERSION_TAG
@@ -24,6 +24,6 @@ if [ "$MASTER_SHA" == "$HEAD_SHA" ]; then
     # Alias branch for the most recently released tag, for easier diffing
     git push -f origin master:latest-release
   else
-    echo "$VERSION_TAG exists already"
+    echo "$VERSION_TAG exists already, exiting..."
   fi
 fi
