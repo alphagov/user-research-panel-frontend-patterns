@@ -49,7 +49,13 @@ console.log('Listening on port ' + port);
 console.log('');
 
 if (process.env.GENERATE_STATIC_SITE) {
-  exec('grunt generate_static_site', function (err, stdout, stderr) {
+  var appRoutes = app._router.stack.filter(function (item) {
+    if (typeof item.route !== 'undefined') {
+      return item.route.path;
+    }
+    return false;
+  }).map(function (item) { return item.route.path; });
+  exec('grunt generate_static_site:' + appRoutes.join(':'), function (err, stdout, stderr) {
     console.log(stdout);
     server.close();
   });

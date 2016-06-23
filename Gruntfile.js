@@ -117,7 +117,7 @@ module.exports = function (grunt) {
 
     generate_static_site: {
       options: {
-        urls: ['http://localhost:3000/apply']
+        urls: ['http://localhost:3000/']
       }
     }
 
@@ -215,7 +215,9 @@ module.exports = function (grunt) {
     'generate_static_site',
     'Generate a static version of all the routes',
     function () {
-      var phantomjs = require('grunt-lib-phantomjs').init(grunt);
+      var phantomjs = require('grunt-lib-phantomjs').init(grunt),
+          urls = [],
+          arg;
 
       // Merge task-specific and/or target-specific options with these defaults.
       var options = this.options({
@@ -226,7 +228,13 @@ module.exports = function (grunt) {
         force: false
       });
 
-      var urls = options.urls;
+      if (arguments.length) {
+        for (idx in arguments) {
+          urls.push('http://localhost:3000' + arguments[idx]);
+        }
+      } else {
+        urls = options.urls;
+      }
 
       // Built-in error handlers.
       phantomjs.on('fail.load', function(url) {
