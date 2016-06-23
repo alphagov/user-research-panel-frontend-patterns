@@ -6,6 +6,18 @@ module.exports = {
       res.render('index', { 'page_name' : page_name });
     });
 
+    // patterns - content 
+    app.get('/content', function (req, res) {
+      var page_name = "Content page";
+      res.render('content', { 'page_name' : page_name });
+    });
+
+    // patterns - basic page 
+    app.get('/basic-page', function (req, res) {
+      var page_name = "Basic page";
+      res.render('basic-page', { 'page_name' : page_name });
+    });
+
     // patterns - apply
     app.get('/apply', function (req, res) {
       var page_name = "Apply";
@@ -16,6 +28,18 @@ module.exports = {
     app.get('/confirmation', function (req, res) {
       var page_name = "Confirmation";
       res.render('confirmation', { 'page_name' : page_name });
+    });
+
+    // patterns - page not found
+    app.get('/page-not-found', function (req, res) {
+      var page_name = "Page not found";
+      res.render('404', { 'page_name' : page_name });
+    });
+
+    // patterns - technical problems
+    app.get('/technical-problems', function (req, res) {
+      var page_name = "Sorry, we are having technical problems";
+      res.render('500', { 'page_name' : page_name });
     });
 
     // patterns - text fields - single text field 

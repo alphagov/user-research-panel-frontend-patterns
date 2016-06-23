@@ -16,7 +16,9 @@
 
 {{$content}}
     <main id="content" role="main" tabindex="-1">
+      <!-- Remove this banner for production use - start -->
       {{>patterns_phase_banner}}
+      <!-- Remove this banner for production use - end -->
       {{$mainContent}}{{/mainContent}}
     </main>
 {{/content}}
