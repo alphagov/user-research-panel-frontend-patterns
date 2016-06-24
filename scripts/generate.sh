@@ -54,6 +54,7 @@ if [ "$DOMAIN" == "github" ]; then
   printf "Generating for hosting as github pages, rewriting URLs\n"
   find $STATIC_SITE -name *.html | xargs -I file sed -i '' 's/href="\//href="\/user-research-panel-frontend-patterns\//g' file
   find $STATIC_SITE -name *.html | xargs -I file sed -i '' 's/src="\//src="\/user-research-panel-frontend-patterns\//g' file
+  find $STATIC_SITE/public/stylesheets -name *.css | xargs -I file sed -i '' 's/url("\//url("\/user-research-panel-frontend-patterns\//g' file
 else
   printf "Generating for hosting locally.\n"
 fi
