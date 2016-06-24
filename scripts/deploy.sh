@@ -17,7 +17,11 @@ if [ "$MASTER_SHA" == "$HEAD_SHA" ]; then
   if git rev-parse $VERSION>/dev/null 2>&1; then
     printf "$VERSION_TAG exists already, exiting...\n"
     exit 1;
+  else
+    make deploy
   fi
 else
+  printf "MASTER_SHA: $MASTER_SHA\n"
+  printf "HEAD_SHA: $HEAD_SHA\n"
   printf "Not on master branch, exiting...\n"
 fi

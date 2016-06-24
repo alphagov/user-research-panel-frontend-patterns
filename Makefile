@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-deploy: check_version make_static_folder get_github_pages generate_new_gh_pages tag_release clean
+deploy: make_static_folder get_github_pages generate_new_gh_pages tag_release clean
 
 local: make_static_folder generate_local_site run_local
 
