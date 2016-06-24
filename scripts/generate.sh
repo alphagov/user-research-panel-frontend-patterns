@@ -52,7 +52,8 @@ done
 # If site is to be hosted on github, rewrite URLs so it can work as github pages
 if [ "$DOMAIN" == "github" ]; then
   printf "Generating for hosting as github pages, rewriting URLs\n"
-  find $STATIC_SITE -name *.html | xargs -I file sed -i '' 's/href="\/public/href="\/user-research-panel-frontend-patterns\/public/g' file
+  find $STATIC_SITE -name *.html | xargs -I file sed -i '' 's/href="\//href="\/user-research-panel-frontend-patterns\//g' file
+  find $STATIC_SITE -name *.html | xargs -I file sed -i '' 's/src="\//src="\/user-research-panel-frontend-patterns\//g' file
 else
   printf "Generating for hosting locally.\n"
 fi
