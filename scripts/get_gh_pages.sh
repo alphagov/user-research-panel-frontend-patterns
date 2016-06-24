@@ -16,4 +16,3 @@ git remote add origin git@github.com:alphagov/user-research-panel-frontend-patte
 git fetch origin
 git checkout gh-pages
 rm -rf ./*
-cp $ROOT/scripts/GH-PAGE_README.md ./READM.md
