@@ -4,7 +4,7 @@
 <!--[if gt IE 8]><!--><html lang=""><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
-    <title>Single field with multiple checkbox options with validation - User research panel front-end patterns</title>
+    <title>Multiple fields with multiple checkbox options and a hidden legend - User research panel front-end patterns</title>
 
     <!--[if gt IE 8]><!--><link href="/user-research-panel-frontend-patterns/public/stylesheets/govuk-template.css?0.17.3" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="/user-research-panel-frontend-patterns/public/stylesheets/govuk-template-ie6.css?0.17.3" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -100,89 +100,90 @@
 
       <a href="/user-research-panel-frontend-patterns/" class="link-back">Back</a>
 
-      <!-- the aria-labelledby attribute should have a value matching the id of the <h1> tag below -->
-      <div class="error-summary" role="group" aria-labelledby="error-summary-heading-1" tabindex="-1">
-
-        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-1">
-          Message to alert the user to a problem goes here
-        </h1>
-
-        <!-- This paragraph is optional. Only add it if the links need more description than is in the h1 above -->
-        <p>
-          Optional description of the errors and how to correct them
-        </p>
-
-        <!--
-          Each item in this list links to a field with validation errors.
-
-          For this to work, the href attribute must include a fragment identifier ('#' + id) pointing to the id of first checkbox <input> of the field with the problem.
-        -->
-        <ul class="error-summary-list">
-          <li><a href="#field-1">Field 1</a></li>
-          <li><a href="#field-1-with-hint">Field 1 with hint</a></li>
-        </ul>
-
-      </div>
-
       <h1 class="heading-xlarge">
-        Single field with multiple checkbox options with validation
+        Multiple fields with multiple checkbox options and a hidden legend
       </h1>
 
       <div class="grid-row">
         <div class="column-two-thirds">
 
           <form action="" method="get">
-            <!-- Add an 'error' class to the form-group <fieldset> -->
-            <fieldset class="form-group error">
+            <fieldset class="form-group">
 
-              <!-- Remove the 'form-label' or 'form-label-bold' class from the <legend> tag -->
-              <legend id="field-1">
+              <!-- The <legend> tag must label the field -->
+              <legend class="form-label-bold visuallyhidden">Multiple fields with multiple checkbox options and a hidden legend</legend>
 
-                <!-- Wrap the legend text in a <span> with a class of 'form-label' or 'form-label-bold' -->
-                <span class="form-label-bold">Checkbox field 1</span>
-
-                <!-- Add the error text for the field to a span with a class of 'error-message' -->
-                <span class="error-message">Error message goes here</span>
-              </legend>
-
-              <label class="block-label" for="checkbox-1">
-                <input id="checkbox-1" type="checkbox" name="checkbox-1" value="True">
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-1-option-1">
+                <input id="checkbox-group-1-option-1" type="checkbox" name="checkbox-group-1-option-1" value="True">
                 Option 1
               </label>
-              <label class="block-label" for="checkbox-2">
-                <input id="checkbox-2" type="checkbox" name="checkbox-group" value="True">
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-1-option-2">
+                <input id="checkbox-group-1-option-2" type="checkbox" name="checkbox-group-1-option-2" value="True">
                 Option 2
               </label>
-              <label class="block-label" for="checkbox-3">
-                <input id="checkbox-3" type="checkbox" name="checkbox-group" value="True">
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-1-option-3">
+                <input id="checkbox-group-1-option-3" type="checkbox" name="checkbox-group-1-option-3" value="True">
                 Option 3
               </label>
 
             </fieldset>
-            <fieldset class="form-group error">
-              <legend id="field-1-with-hint"> 
-                <span class="form-label-bold">Checkbox field 1 with hint</span>
-                <span class="form-hint">Hint to help users choose an option</span>
-                <span class="error-message">Error message goes here</span>
-              </legend>
-              <label class="block-label" for="checkbox-with-hint-1">
-                <input id="checkbox-with-hint-1" type="checkbox" name="checkbox-with-hint-1" value="True">
-                Option 1
-              </label>
-              <label class="block-label" for="checkbox-with-hint-2">
-                <input id="checkbox-with-hint-2" type="checkbox" name="checkbox-with-hint-2" value="True">
+            <fieldset class="form-group">
+
+              <!-- The <legend> tag must label the field -->
+              <legend class="form-label-bold visuallyhidden">Multiple fields with multiple checkbox options and a hidden legend</legend>
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-2-option-1">
+                <input id="checkbox-group-2-option-2" type="checkbox" name="checkbox-group-2-option-2" value="True">
                 Option 2
               </label>
-              <label class="block-label" for="checkbox-with-hint-3">
-                <input id="checkbox-with-hint-3" type="checkbox" name="checkbox-with-hint-3" value="True">
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-2-option-2">
+                <input id="checkbox-group-2-option-2" type="checkbox" name="checkbox-group-2-option-2" value="True">
+                Option 2
+              </label>
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-2-option-3">
+                <input id="checkbox-group-2-option-3" type="checkbox" name="checkbox-group-2-option-3" value="True">
                 Option 3
               </label>
+
+            </fieldset>
+            <fieldset class="form-group">
+
+              <!-- The <legend> tag must label the field -->
+              <legend class="form-label-bold visuallyhidden">Multiple fields with multiple checkbox options and a hidden legend</legend>
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-3-option-1">
+                <input id="checkbox-group-3-option-2" type="checkbox" name="checkbox-group-3-option-2" value="True">
+                Option 2
+              </label>
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-3-option-2">
+                <input id="checkbox-group-3-option-2" type="checkbox" name="checkbox-group-3-option-2" value="True">
+                Option 2
+              </label>
+
+              <!-- The 'for' attribute must match the id of the form it labels -->
+              <label class="block-label" for="checkbox-group-3-option-3">
+                <input id="checkbox-group-3-option-3" type="checkbox" name="checkbox-group-3-option-3" value="True">
+                Option 3
+              </label>
+
             </fieldset>
             <button type="submit" class="button">Continue</button>
           </form>
         </div>
       </div>
-      <!-- see http://govuk-elements.herokuapp.com/errors/ for guidance -->
     </main>
 
     <footer class="group js-footer" id="footer" role="contentinfo">

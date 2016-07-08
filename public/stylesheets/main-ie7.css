@@ -1959,6 +1959,38 @@ input[type=number] {
   background-color: #0b0c0c;
 }
 
+.back-to-previous {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  font-weight: 400;
+  text-transform: none;
+  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
+  display: block;
+  position: static;
+  text-decoration: none;
+  border-bottom: #0b0c0c 1px solid;
+  width: 2.25em;
+  background: url("public/images/icon-caret-left.png") left 0.2em no-repeat;
+  padding-left: 0.75em;
+  text-align: right;
+  margin: 2em 0 0 2em;
+  overflow: hidden;
+}
+
+a.back-to-previous,
+a.back-to-previous:active,
+a.back-to-previous:hover,
+a.back-to-previous:focus {
+  color: #0b0c0c;
+}
+
+.heading-no-breadcrumb {
+  margin-top: 66px;
+}
+
 /* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
 #content {
   outline: none;

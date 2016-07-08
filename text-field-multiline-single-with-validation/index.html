@@ -98,11 +98,30 @@
       </div>
       <!-- Remove this banner for production use - end -->
 
-      <div class="breadcrumbs">
-        <ol>
-          <li><a href="/user-research-panel-frontend-patterns/">User research panel front-end patterns</a></li>
-          <li>Single multi-line text field with validation</li>
-        </ol>
+      <a href="/user-research-panel-frontend-patterns/" class="link-back">Back</a>
+
+      <!-- the aria-labelledby attribute should have a value matching the id of the <h1> tag below -->
+      <div class="error-summary" role="group" aria-labelledby="error-summary-heading-1" tabindex="-1">
+
+        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-1">
+          Message to alert the user to a problem goes here
+        </h1>
+
+        <!-- This paragraph is optional. Only add it if the links need more description than is in the h1 above -->
+        <p>
+          Optional description of the errors and how to correct them
+        </p>
+
+        <!--
+          Each item in this list links to a field with validation errors.
+
+          For this to work, the href attribute must include a fragment identifier ('#' + id) pointing to the id of first checkbox <input> of the field with the problem.
+        -->
+        <ul class="error-summary-list">
+          <li><a href="#field-1">Field 1</a></li>
+          <li><a href="#field-1-with-hint">Field 1 with hint</a></li>
+        </ul>
+
       </div>
 
       <h1 class="heading-xlarge">
@@ -129,12 +148,12 @@
               <textarea class="form-control" id="field-1" cols="60" rows="10"></textarea>
             </div>
             <div class="form-group error">
-              <label class="form-label" for="field-with-hint-1">
+              <label class="form-label" for="field-1-with-hint">
                 <span class="form-label">Text field 1 with hint</span>
                 <span class="error-message">Error message goes here</span>
                 <span class="form-hint">Hint to help the user fill in the field</span>
               </label>
-              <textarea class="form-control" id="field-with-hint-1" cols="60" rows="10"></textarea>
+              <textarea class="form-control" id="field-1-with-hint" cols="60" rows="10"></textarea>
             </div>
             <button type="submit" class="button">Continue</button>
           </form>
