@@ -161,5 +161,11 @@ module.exports = {
       var page_name = "Single field with multiple checkbox options and a conditional section with validation";
       res.render('checkbox-field-single-multiple-options-conditional-section-with-validation', { 'page_name' : page_name });
     });
+
+    // patterns - checkbox buttons - multiple checkbox fields with multiple options 
+    app.get('/checkbox-field-single-multiple-options-hidden-legend', function (req, res) {
+      var page_name = "Multiple fields with multiple checkbox options and a hidden legend";
+      res.render('checkbox-field-multiple-multiple-options-hidden-legend', { 'page_name' : page_name });
+    });
   }
 };
