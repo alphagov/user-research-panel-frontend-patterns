@@ -6,6 +6,30 @@
 
       {{>back-to-previous}}
 
+      <!-- the aria-labelledby attribute should have a value matching the id of the <h1> tag below -->
+      <div class="error-summary" role="group" aria-labelledby="error-summary-heading-1" tabindex="-1">
+
+        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-1">
+          Message to alert the user to a problem goes here
+        </h1>
+
+        <!-- This paragraph is optional. Only add it if the links need more description than is in the h1 above -->
+        <p>
+          Optional description of the errors and how to correct them
+        </p>
+
+        <!--
+          Each item in this list links to a field with validation errors.
+
+          For this to work, the href attribute must include a fragment identifier ('#' + id) pointing to the id of first checkbox <input> of the field with the problem.
+        -->
+        <ul class="error-summary-list">
+          <li><a href="#country-uk">UK</a></li>
+          <li><a href="#country-other">Other</a></li>
+        </ul>
+
+      </div>
+
       <h1 class="heading-xlarge">
         Single field with multiple checkbox options and a conditional section with validation 
       </h1>
