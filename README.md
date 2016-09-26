@@ -5,23 +5,44 @@ A pattern library for building user research surveys.
 
 Built from [GOVUK Elements](https://github.com/alphagov/govuk_elements).
 
-## Running this site locally
+## Installation
 
-If you would like to clone the repository and run it locally,
-you will need [Node.js](http://nodejs.org/) (at least version v0.10.0).
+```
+make install
+```
 
-Clone this repository
+## Generate and run the static site locally
 
-    git clone git@github.com:alphagov/govuk_elements.git
+```
+make local
+```
 
+## Deploy a new version of the static site
 
-Install the required node modules
+Deployment involves the following steps:
 
-    npm install
+1. generation of a new version of the static site
+2. cloning the `gh-pages` branch of the repo and clearing out the files
+3. copying the generated files into this repo so any changes are recognised by git
+4. commiting the changes against the number in `VERSION.txt`
+5. tagging the version as the number in `VERSION.txt`
 
+To deploy the static site you need to have commited a version bump, for example:
 
-Run the app
+https://github.com/alphagov/user-research-panel-frontend-patterns/commit/2d6d9404a5260d7d24508352242f74168a68ec48
 
-    node start.js
+Version numbers follow [semantic versioning](http://semver.org/).
 
-Go to [localhost:3000](http://localhost:3000) in your browser.
+To run the deployment process:
+
+```
+make deploy
+```
+
+## Tidy up
+
+In case any make commands fail and you're left with a semi-complete static site, you can remove old versions by running:
+
+```
+make clean
+```
