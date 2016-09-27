@@ -222,7 +222,7 @@ module.exports = function (grunt) {
       // Merge task-specific and/or target-specific options with these defaults.
       var options = this.options({
         // Default PhantomJS timeout.
-        timeout: 1000,
+        timeout: 3000,
         // Explicit non-file URLs to test.
         urls: [],
         force: false
