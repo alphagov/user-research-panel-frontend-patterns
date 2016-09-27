@@ -2041,4 +2041,12 @@ select {
 /* Textarea styles */
 textarea.form-control {
   width: auto;
+  max-width: 100%;
+}
+
+/* Fix for IOS 8 bug: http://stackoverflow.com/questions/30514021/ios-8-3-fieldset-border-bug */
+legend {
+  float: left;
+  clear: left;
+  width: 100%;
 }
