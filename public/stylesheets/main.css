@@ -1,22 +1,22 @@
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
 }
 
-#content {
+#content, #wrapper {
   max-width: 960px;
   margin: 0 15px;
 }
 
 @media (min-width: 641px) {
-  #content {
+  #content, #wrapper {
     margin: 0 30px;
   }
 }
 
 @media (min-width: 1020px) {
-  #content {
+  #content, #wrapper {
     margin: 0 auto;
   }
 }
@@ -25,37 +25,37 @@
   margin: 0 -15px;
 }
 
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
 }
 
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
 }
 
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
 }
 
-#content {
+#content, #wrapper {
   max-width: 960px;
   margin: 0 15px;
 }
 
 @media (min-width: 641px) {
-  #content {
+  #content, #wrapper {
     margin: 0 30px;
   }
 }
 
 @media (min-width: 1020px) {
-  #content {
+  #content, #wrapper {
     margin: 0 auto;
   }
 }
@@ -64,13 +64,13 @@
   margin: 0 -15px;
 }
 
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
 }
 
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
@@ -2063,7 +2063,7 @@ input[type=number] {
 }
 
 /* Styles for the confirmation page */
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
@@ -2209,25 +2209,25 @@ input[type=number] {
   }
 }
 
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after {
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .confirmation div:after, #wrapper:after {
   content: "";
   display: block;
   clear: both;
 }
 
-#content {
+#content, #wrapper {
   max-width: 960px;
   margin: 0 15px;
 }
 
 @media (min-width: 641px) {
-  #content {
+  #content, #wrapper {
     margin: 0 30px;
   }
 }
 
 @media (min-width: 1020px) {
-  #content {
+  #content, #wrapper {
     margin: 0 auto;
   }
 }
@@ -2357,8 +2357,24 @@ a.back-to-previous:focus {
   margin-top: 66px;
 }
 
-/* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
+/* Give the wrapper div all the styles govuk elements gives main */
+#wrapper {
+  padding-bottom: 30px;
+}
+
+@media (min-width: 769px) {
+  #wrapper {
+    padding-bottom: 90px;
+  }
+}
+
+/* Reset govuk element styles so it can sit inside the wrapper div */
 #content {
+  width: auto;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  /* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
   outline: none;
 }
 
