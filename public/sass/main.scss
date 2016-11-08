@@ -8,8 +8,24 @@
   margin-top: 66px;
 }
 
-/* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
+/* Give the wrapper div all the styles govuk elements gives main */
+#wrapper {
+  @extend %site-width-container;
+  @extend %contain-floats;
+  padding-bottom: $gutter;
+
+  @include media(desktop) {
+    padding-bottom: $gutter * 3;
+  }
+}
+
+/* Reset govuk element styles so it can sit inside the wrapper div */
 #content {
+  width: auto;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  /* We set tab-index -1 on #content so the skiplink can focus it. This CSS ensures it doesn't have an outline when this happens */
   outline: none;
 }
 

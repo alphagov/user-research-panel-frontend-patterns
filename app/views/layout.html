@@ -15,12 +15,14 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
-    <main id="content" role="main" tabindex="-1">
+    <div id="wrapper">
       <!-- Remove this banner for production use - start -->
       {{>patterns_phase_banner}}
       <!-- Remove this banner for production use - end -->
-      {{$mainContent}}{{/mainContent}}
-    </main>
+      <main role="main" id="content" tabindex="-1">
+        {{$mainContent}}{{/mainContent}}
+      </main>
+    </div>
 {{/content}}
 
 {{$footerSupportLinks}}
