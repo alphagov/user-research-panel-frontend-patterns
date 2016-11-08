@@ -163,7 +163,8 @@ module.exports = function (grunt) {
       'copy',
       'convert_template',
       'replace',
-      'sass'
+      'sass',
+      'import'
     ]
   );
 
@@ -175,6 +176,7 @@ module.exports = function (grunt) {
       'convert_template',
       'replace',
       'sass',
+      'import',
       'shell:run_app'
     ]
   );
